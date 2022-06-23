@@ -1,0 +1,157 @@
+:root {
+    --red: #F94C66;
+    --blue: #3AB0FF;
+    --green: #5FD068;
+    --input: #f8f9fa;
+    --border: #dadce0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #edebf2;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form {
+    position: relative;
+    width: 800px;
+    margin: auto;
+}
+
+.form__button {
+    position: fixed;
+    top: 12px;
+    left: calc(1083px + 4px);
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.form__button button {
+    font-size: 18px;
+    margin: 8px;
+    display: block;
+}
+
+.card {
+    position: relative;
+    background-color: #fff;
+    margin: 12px 0px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+    background-color: var(--blue);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.background {
+    height: 200px;
+    background: center / cover no-repeat url('background.jpg');
+}
+
+.background.card:after {
+    background-color: transparent;
+}
+
+.input__group {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    flex: 1;
+    background-color: var(--input);
+    font-size: inherit;
+    font-family: inherit;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    outline: none;
+}
+
+.input__group input[type="text"] {
+    margin-left: 12px;
+}
+
+.input__group input:focus {
+    border-bottom: 2px solid var(--blue);
+}
+
+button {
+    width: 35px;
+    height: 35px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #fff;
+    color: #5f6368;
+    margin-left: 12px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--input);
+}
+
+.input__group button:hover {
+    color: var(--red);
+}
+
+.check__group {
+    margin-top: 12px;
+    margin-left: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.check__group label {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check__group input:focus {
+    border-bottom: 2px solid var(--green);
+}
+
+.check__group button:hover {
+    color: var(--blue);
+}
+
+.check__group .btn {
+    color: var(--blue);
+    font-size: inherit;
+    font-family: inherit;
+    padding: 8px;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.check__group .btn:hover {
+    background-color: var(--blue);
+    color: #fff;
+}

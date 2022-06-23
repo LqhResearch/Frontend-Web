@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bài khảo sát</title>
+    <link rel="icon" href="favicon.png">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- My style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form">
+        <div class="form__button">
+            <button id="add-text" title="Thêm nội dung"><i class="fas fa-plus-circle"></i></button>
+            <button id="add-radio" title="Thêm trắc nghiệm"><i class="fas fa-check-circle"></i></button>
+            <button id="add-check" title="Thêm hộp kiểm"><i class="fas fa-check-square"></i></button>
+        </div>
+
+        <div class="card background"></div>
+        <div class="card">
+            <div class="input__group">
+                <label>Tiêu đề: </label>
+                <input type="text" />
+            </div>
+        </div>
+        <div class="card">
+            <div class="input__group">
+                <label>Mô tả: </label>
+                <input type="text" />
+            </div>
+        </div>
+        <div class="card">
+            <div class="input__group">
+                <label>Câu hỏi: </label>
+                <input type="text" />
+                <button data-type="main" title="Xoá câu hỏi"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="input__group">
+                <label>Câu trắc nghiệm: </label>
+                <input type="text" />
+                <button data-type="main" title="Xoá câu hỏi"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="check__group">
+                <label><i class="fas fa-check-circle"></i></label>
+                <input type="text" />
+                <button data-type="sub"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="check__group">
+                <label><i class="fas fa-check-circle"></i></label>
+                <input type="text" />
+                <button data-type="sub"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="check__group">
+                <div class="btn" data-icon="check"><i class="fas fa-plus-circle"></i> Thêm</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="input__group">
+                <label>Hộp kiểm: </label>
+                <input type="text" />
+                <button data-type="main" title="Xoá câu hỏi"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="check__group">
+                <label><i class="fas fa-check-square"></i></label>
+                <input type="text" />
+                <button data-type="sub"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="check__group">
+                <label><i class="fas fa-check-square"></i></label>
+                <input type="text" />
+                <button data-type="sub"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="check__group">
+                <div class="btn" data-icon="radio"><i class="fas fa-plus-circle"></i> Thêm</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
