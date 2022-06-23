@@ -1,0 +1,115 @@
+:root {
+    --blue: blue;
+    --border: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #e6e6e6;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+p {
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.card {
+    width: 800px;
+    background-color: #fff;
+    margin: 50px 0 12px 0;
+    padding: 57px 72px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.header__title,
+.header__subtitle {
+    text-align: center;
+}
+
+.header__subtitle,
+.header__caption {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.input__group {
+    display: flex;
+    margin: 10px 0;
+}
+
+.input__group input {
+    flex: 1;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    outline: none;
+}
+
+input[type="text"] {
+    margin-left: 16px;
+}
+
+.radio__group div {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 8px;
+}
+
+table tr th,
+table tr td {
+    padding: 8px;
+    border: 1px solid var(--border);
+}
+
+table tr td:not(:first-child) {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 8px 16px;
+    margin: 10px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
