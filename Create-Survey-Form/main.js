@@ -1,219 +1,81 @@
-var addCheckBtn = document.querySelectorAll('.check__group .btn');
-
-function checkGroup(icon = "check") {
-    var div = document.createElement("div");
-    div.className = "check__group";
-    // Label
-    var label = document.createElement("label");
-    var i = document.createElement("i");
-    i.className = icon == "check" ? "fas fa-check-circle" : "fas fa-check-square";
-    label.appendChild(i);
-    div.appendChild(label);
-
-    // Input
-    div.appendChild(document.createElement("input"));
-
-    // Button
-    var button = document.createElement("button");
-    button.dataset.type = 'sub';
-    button.onclick = function () {
-        div.parentElement.removeChild(div);
-    }
-    var i = document.createElement("i");
-    i.className = "fas fa-trash-alt";
-    button.appendChild(i);
-    div.appendChild(button);
-    return div;
+// Set the form__button to automatically move when scrolling
+window.onscroll = function () {
+    document.querySelector('.form__button').style.top = window.scrollY + "px";
 }
 
-addCheckBtn.forEach(element => {
-    element.onclick = function () {
-        const checkGroupElement = checkGroup(this.dataset.icon);
-        const btnGroupElemnt = this.parentElement;
-        var card = this.parentElement.parentElement;
-        card.appendChild(checkGroupElement);
-        card.appendChild(btnGroupElemnt);
-    }
-});
-
-
-const dataTypeSubs = document.querySelectorAll('[data-type="sub"]');
-console.log(dataTypeSubs);
-
-dataTypeSubs.forEach(element => {
-    element.onclick = function () {
-        var child = this.parentElement;
-        child.parentElement.removeChild(child);
-    }
-});
-
-var btnAddText = document.querySelector('#add-text');
-var btnAddRadio = document.querySelector('#add-radio');
-var btnAddCheck = document.querySelector('#add-check');
+// Event add question button
 var form = document.querySelector('.form');
+var addQuestionBtn = document.querySelector('#add-question');
+var addRadioBtn = document.querySelector('#add-radio');
+var addCheckBtn = document.querySelector('#add-check');
 
-btnAddText.onclick = function () {
-    const cardText = createCardText();
-    form.appendChild(cardText);
-}
-
-function createCardText(text = "Câu hỏi: ") {
-    var div = document.createElement("div");
-    div.className = "card";
-    var div1 = document.createElement("div");
-    div1.className = "input__group";
-
-    // Label
-    var label = document.createElement("label");
-    label.innerText = text;
-    div1.appendChild(label);
-
-    // Input
-    var input = document.createElement("input");
-    input.type = "text";
-    div1.appendChild(input);
-
-    // Button
-    var button = document.createElement("button");
-    button.dataset.type = 'main';
-    button.onclick = function() {
-        div.parentElement.removeChild(div);
-    }
-    var i = document.createElement("i");
-    i.className = "fas fa-trash-alt";
-    button.appendChild(i);
-
-    div1.appendChild(button);
-
-    div.appendChild(div1);
+// Question element
+function Card(elements) {
+    var div = document.createElement('div');
+    div.className = 'card';
+    elements.forEach(e => {
+        div.appendChild(e);
+    });
     return div;
 }
 
-function createCardCheck() {
-    var div1 = document.createElement("div");
-    div1.className = "input__group";
-
-    // Label
-    var label = document.createElement("label");
-    label.innerText = "Câu trắc nghiệm: ";
-    div1.appendChild(label);
-
-    // Input
-    var input = document.createElement("input");
-    input.type = "text";
-    div1.appendChild(input);
-
-    // Button
-    var button = document.createElement("button");
-    button.dataset.type = 'main';
-    var i = document.createElement("i");
-    i.className = "fas fa-trash-alt";
-    button.appendChild(i);
-
-    div1.appendChild(button);
-
-    return div1;
+// Input group element
+function InputGroup(text = 'Câu hỏi: ') {
+    var div = document.createElement('div');
+    div.className = 'input__group';
+    div.innerHTML = '<label>' + text + '</label><input type="text" /><button onclick="remove(this)" title="Xoá câu hỏi"><i class="fas fa-trash-alt"></i></button>';
+    return div;
 }
 
-btnAddRadio.onclick = function() {
-    var div = document.createElement("div");
-    div.className = "card";
-    var div1 = document.createElement("div");
-    div1.className = "input__group";
-
-    // Label
-    var label = document.createElement("label");
-    label.innerText = "Câu trắc nghiệm: ";
-    div1.appendChild(label);
-
-    // Input
-    var input = document.createElement("input");
-    input.type = "text";
-    div1.appendChild(input);
-
-    // Button
-    var button = document.createElement("button");
-    button.dataset.type = 'main';
-    button.onclick = function() {
-        div.parentElement.removeChild(div);
-    }
-    var i = document.createElement("i");
-    i.className = "fas fa-trash-alt";
-    button.appendChild(i);
-
-    div1.appendChild(button);
-
-    // Button add
-    var div3 = document.createElement("div");
-    div3.classList = "check__group";
-    var div4 = document.createElement("div");
-    div4.classList = "btn";
-    div4.dataset.icon = "check";
-    div4.innerHTML = '<i class="fas fa-plus-circle"></i> Thêm';
-
-
-    div3.appendChild(div4);
-
-    div.appendChild(div1);
-    div.appendChild(checkGroup('check'));
-    div.appendChild(checkGroup('check'));
-    div.appendChild(div3);
-
-    form.appendChild(div);
+// Check group element
+function CheckGroup(type = 'check') {
+    var icon = type == 'check' ? 'fas fa-check-circle' : 'fas fa-check-square';
+    var div = document.createElement('div');
+    div.className = 'check__group';
+    div.innerHTML = '<label><i class="' + icon + '"></i></label><input type="text" /><button onclick="remove(this, \'2\')"><i class="fas fa-trash-alt"></i></button>';
+    return div;
 }
 
-btnAddCheck.onclick = function() {
-    var div = document.createElement("div");
-    div.className = "card";
-    var div1 = document.createElement("div");
-    div1.className = "input__group";
-
-    // Label
-    var label = document.createElement("label");
-    label.innerText = "Hộp kiểm: ";
-    div1.appendChild(label);
-
-    // Input
-    var input = document.createElement("input");
-    input.type = "text";
-    div1.appendChild(input);
-
-    // Button
-    var button = document.createElement("button");
-    button.dataset.type = 'main';
-    button.onclick = function() {
-        div.parentElement.removeChild(div);
-    }
-    var i = document.createElement("i");
-    i.className = "fas fa-trash-alt";
-    button.appendChild(i);
-
-    div1.appendChild(button);
-
-    // Button add
-    var div3 = document.createElement("div");
-    div3.classList = "check__group";
-    var div4 = document.createElement("div");
-    div4.classList = "btn";
-    div4.dataset.icon = "radio";
-    div4.innerHTML = '<i class="fas fa-plus-circle"></i> Thêm';
-
-
-    div3.appendChild(div4);
-
-    div.appendChild(div1);
-    div.appendChild(checkGroup('radio'));
-    div.appendChild(checkGroup('radio'));
-    div.appendChild(div3);
-
-    form.appendChild(div);
+// Check group button element
+function CheckGroupBtn(type = 'check') {
+    var div = document.createElement('div');
+    div.className = 'check__group';
+    div.innerHTML = '<div class="btn" onclick="AddCheckGroup(this, \'' + type + '\')"><i class="fas fa-plus-circle"></i> Thêm</div>';
+    return div;
 }
 
-const dataTypeMains = document.querySelectorAll('[data-type="main"]');
+// Add element check group
+function AddCheckGroup(_this, type = 'check') {
+    var card = _this.parentElement.parentElement;
+    var groupBtn = _this.parentElement;
+    card.appendChild(CheckGroup(type));
+    card.appendChild(groupBtn);
+}
 
-dataTypeMains.forEach(element => {
-    element.onclick = function() {
-        var card = this.parentElement.parentElement;
-        card.parentElement.removeChild(card);
-    }
-});
+// Delete element
+function remove(_this, type = '1') {
+    var element = type == '2' ? _this.parentElement : _this.parentElement.parentElement;
+    element.parentElement.removeChild(element);
+}
+
+addQuestionBtn.onclick = function () {
+    var card = Card([InputGroup()]);
+    form.appendChild(card);
+}
+
+addRadioBtn.onclick = function () {
+    var card = Card([InputGroup('Câu trắc nghiệm: '), CheckGroup(), CheckGroup(), CheckGroupBtn()]);
+    form.appendChild(card);
+}
+
+addCheckBtn.onclick = function () {
+    var card = Card([InputGroup('Hộp kiểm: '), CheckGroup('radio'), CheckGroup('radio'), CheckGroupBtn('radio')]);
+    form.appendChild(card);
+}
+
+// Initial page
+window.onload = function () {
+    addQuestionBtn.onclick();
+    addRadioBtn.onclick();
+    addCheckBtn.onclick();
+}

@@ -25,13 +25,17 @@ body {
     margin: auto;
 }
 
+.form__container {
+    position: relative;
+}
+
 .form__button {
-    position: fixed;
-    top: 12px;
-    left: calc(1083px + 4px);
+    position: absolute;
+    right: -65px;
     background-color: #fff;
     border: 1px solid var(--border);
     border-radius: 8px;
+    z-index: 1;
 }
 
 .form__button button {
