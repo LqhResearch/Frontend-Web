@@ -21,7 +21,7 @@ body {
 
 .form {
     position: relative;
-    width: 800px;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -34,14 +34,13 @@ body {
     right: -65px;
     background-color: #fff;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 16px;
     z-index: 1;
 }
 
-.form__button button {
+.form__button .btn {
     font-size: 18px;
-    margin: 8px;
-    display: block;
+    margin: 4px;
 }
 
 .card {
@@ -74,6 +73,66 @@ body {
     background-color: transparent;
 }
 
+.btn {
+    width: 35px;
+    height: 35px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #fff;
+    color: #5f6368;
+    margin-left: 12px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn-check {
+    width: 100px;
+    color: var(--blue);
+    margin: 0;
+    border: 1px solid var(--blue);
+    border-radius: 18px;
+}
+
+.btn.btn-check i {
+    margin-right: 8px;
+}
+
+.btn.btn-success {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.btn.btn-danger {
+    background-color: var(--red);
+    color: #fff;
+}
+
+.btn-form {
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-form .btn {
+    width: 200px;
+    border-radius: 8px;
+}
+
+.btn-form .btn:hover {
+    background-color: var(--blue);
+}
+
+.btn:hover {
+    background-color: var(--input);
+}
+
 .input__group {
     display: flex;
     align-items: center;
@@ -100,24 +159,6 @@ input {
     border-bottom: 2px solid var(--blue);
 }
 
-button {
-    width: 35px;
-    height: 35px;
-    font-size: inherit;
-    font-family: inherit;
-    background-color: #fff;
-    color: #5f6368;
-    margin-left: 12px;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--input);
-}
-
 .input__group button:hover {
     color: var(--red);
 }
@@ -139,20 +180,6 @@ button:hover {
 
 .check__group input:focus {
     border-bottom: 2px solid var(--green);
-}
-
-.check__group button:hover {
-    color: var(--blue);
-}
-
-.check__group .btn {
-    color: var(--blue);
-    font-size: inherit;
-    font-family: inherit;
-    padding: 8px;
-    border: 1px solid var(--blue);
-    border-radius: 8px;
-    cursor: pointer;
 }
 
 .check__group .btn:hover {

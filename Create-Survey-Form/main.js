@@ -5,6 +5,7 @@ window.onscroll = function () {
 
 // Event add question button
 var form = document.querySelector('.form');
+var btnForm = document.querySelector('form .btn-form');
 var addQuestionBtn = document.querySelector('#add-question');
 var addRadioBtn = document.querySelector('#add-radio');
 var addCheckBtn = document.querySelector('#add-check');
@@ -23,7 +24,7 @@ function Card(elements) {
 function InputGroup(text = 'Câu hỏi: ') {
     var div = document.createElement('div');
     div.className = 'input__group';
-    div.innerHTML = '<label>' + text + '</label><input type="text" /><button onclick="remove(this)" title="Xoá câu hỏi"><i class="fas fa-trash-alt"></i></button>';
+    div.innerHTML = '<label>' + text + '</label><input name="name" type="text" /><div class="btn" onclick="remove(this)" title="Xoá câu hỏi"><i class="fas fa-trash-alt"></i></div>';
     return div;
 }
 
@@ -32,7 +33,7 @@ function CheckGroup(type = 'check') {
     var icon = type == 'check' ? 'fas fa-check-circle' : 'fas fa-check-square';
     var div = document.createElement('div');
     div.className = 'check__group';
-    div.innerHTML = '<label><i class="' + icon + '"></i></label><input type="text" /><button onclick="remove(this, \'2\')"><i class="fas fa-trash-alt"></i></button>';
+    div.innerHTML = '<label><i class="' + icon + '"></i></label><input name="sub-name" type="text" /><div class="btn" onclick="remove(this, \'2\')"><i class="fas fa-trash-alt"></i></div>';
     return div;
 }
 
@@ -40,7 +41,7 @@ function CheckGroup(type = 'check') {
 function CheckGroupBtn(type = 'check') {
     var div = document.createElement('div');
     div.className = 'check__group';
-    div.innerHTML = '<div class="btn" onclick="AddCheckGroup(this, \'' + type + '\')"><i class="fas fa-plus-circle"></i> Thêm</div>';
+    div.innerHTML = '<div class="btn btn-check" onclick="AddCheckGroup(this, \'' + type + '\')"><i class="fas fa-plus-circle"></i> Thêm</div>';
     return div;
 }
 
@@ -61,16 +62,19 @@ function remove(_this, type = '1') {
 addQuestionBtn.onclick = function () {
     var card = Card([InputGroup()]);
     form.appendChild(card);
+    form.appendChild(btnForm);
 }
 
 addRadioBtn.onclick = function () {
     var card = Card([InputGroup('Câu trắc nghiệm: '), CheckGroup(), CheckGroup(), CheckGroupBtn()]);
     form.appendChild(card);
+    form.appendChild(btnForm);
 }
 
 addCheckBtn.onclick = function () {
     var card = Card([InputGroup('Hộp kiểm: '), CheckGroup('radio'), CheckGroup('radio'), CheckGroupBtn('radio')]);
     form.appendChild(card);
+    form.appendChild(btnForm);
 }
 
 // Initial page

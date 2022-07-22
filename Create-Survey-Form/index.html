@@ -14,29 +14,35 @@
 </head>
 
 <body>
-    <div class="form">
-        <div class="form__container">
-            <div class="form__button">
-                <button id="add-question" title="Thêm nội dung"><i class="fas fa-plus-circle"></i></button>
-                <button id="add-radio" title="Thêm trắc nghiệm"><i class="fas fa-check-circle"></i></button>
-                <button id="add-check" title="Thêm hộp kiểm"><i class="fas fa-check-square"></i></button>
-            </div>
-        </div>
+    <form method="POST">
+        <div class="form">
+            <div class="form__container">
+                <div class="form__button">
+                    <div class="btn" id="add-question" title="Thêm nội dung"><i class="fas fa-plus-circle"></i></div>
+                    <div class="btn" id="add-radio" title="Thêm trắc nghiệm"><i class="fas fa-check-circle"></i></div>
+                    <div class="btn" id="add-check" title="Thêm hộp kiểm"><i class="fas fa-check-square"></i></button>
+                    </div>
+                </div>
 
-        <div class="card background"></div>
-        <div class="card">
-            <div class="input__group">
-                <label>Tiêu đề: </label>
-                <input type="text" />
+                <div class="card background"></div>
+                <div class="card">
+                    <div class="input__group">
+                        <label>Tiêu đề: </label>
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="input__group">
+                        <label>Mô tả: </label>
+                        <input type="text" />
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="input__group">
-                <label>Mô tả: </label>
-                <input type="text" />
+            <div class="btn-form">
+                <button class="btn btn-success">Tạo</button>
+                <a class="btn btn-danger" href="index.html">Hủy</a>
             </div>
-        </div>
-    </div>
+    </form>
 
     <script src="main.js"></script>
 </body>

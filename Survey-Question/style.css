@@ -1,6 +1,9 @@
 :root {
-    --blue: blue;
-    --border: #ccc;
+    --red: #FF6B6B;
+    --blue: #3AB0FF;
+    --green: #5FD068;
+    --yellow: #F2DF3A;
+    --border: #CCC;
 }
 
 * {
@@ -11,10 +14,10 @@
 
 body {
     position: relative;
+    background-color: #e6e6e6;
     line-height: 1.5;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    background-color: #e6e6e6;
 }
 
 h1 {
@@ -27,23 +30,27 @@ p {
     text-align: justify;
 }
 
+.bg-warning {
+    background-color: var(--red);
+    color: #FFF;
+}
+
 .d-flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header__img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+.d-flex-evenly {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .card {
     width: 800px;
     background-color: #fff;
-    margin: 50px 0 12px 0;
+    margin: 12px;
     padding: 57px 72px;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -97,7 +104,7 @@ table tr td {
     border: 1px solid var(--border);
 }
 
-table tr td:not(:first-child) {
+table tr td:not(:nth-child(2)) {
     text-align: center;
 }
 
@@ -112,4 +119,33 @@ textarea {
     border: 1px solid var(--border);
     border-radius: 8px;
     outline: none;
+}
+
+.btn {
+    width: 200px;
+    line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn.btn-success {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.btn.btn-danger {
+    background-color: var(--red);
+    color: #fff;
 }
