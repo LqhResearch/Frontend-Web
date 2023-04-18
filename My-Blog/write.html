@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="icon" href="./assets/img/favicon.png">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <!-- Ckeditor 4 -->
+    <script src="./vendor/ckeditor/ckeditor.js"></script>
+    <!-- My style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="./index.html" class="text-white text-decoration-none logo">My blog</a>
+                <div>
+                    <div class="dropdown">
+                        <div data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="rounded-circle" src="https://viblo.asia/images/vi-flag-32x48.png" alt="flag">
+                            <span class="text-white fw-bold">Vietnam</span>
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <button class="dropdown-item" type="button">
+                                    <img class="rounded-circle" src="https://viblo.asia/images/vi-flag-32x48.png" alt="flag">
+                                    <span class="text-secondary fw-bold">Vietnam</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item" type="button">
+                                    <img class="rounded-circle" src="https://viblo.asia/images/en-flag-32x48.png" alt="flag">
+                                    <span class="text-secondary fw-bold">English</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 d-flex align-items-center justify-content-center mt-5">
+                    <h1 class="text-white heading__title">Viết blog,...</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <form action="#" class="row">
+            <div class="col-md-12 mb-3">
+                <input type="text" name="name" class="form-control shadow-none" placeholder="Tiêu đề">
+            </div>
+            <div class="col-md-8 mb-3">
+                <input type="text" name="name" class="form-control shadow-none" placeholder="Tag">
+            </div>
+            <div class="col-md-2 mb-3">
+                <input type="file" name="name" class="form-control shadow-none" placeholder="Tag">
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="form-select" required>
+                    <option selected>--- Chọn ---</option>
+                    <option value="1">Xuất bản ngay</option>
+                    <option value="2">Lưu bản nháp</option>
+                </select>
+            </div>
+            <div class="col-md-12 mb-3">
+                <textarea id="content" name="content" class="form-control shadow-none"></textarea>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="p-3 fw-bold text-center">© 2023 My blog. All rights reserved.</div>
+    </div>
+
+    <!-- Bootstrap5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        var input = document.querySelector('input[name="name"]');
+        input.oninput = function () {
+            if (input.value == '') {
+                document.querySelector("h1.heading__title").innerHTML = "Viết blog,...";
+            } else {
+                document.querySelector("h1.heading__title").innerHTML = "Viết blog, " + input.value;
+            }
+        }
+        CKEDITOR.replace('content');
+    </script>
+</body>
+
+</html>

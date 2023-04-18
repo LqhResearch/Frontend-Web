@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Varela+Round&display=swap');
+
+:root {
+    --red: #EF5B61;
+    --blue: #62CDFF;
+    --green: #67A796;
+    --purple: #AD6CFE;
+    --dark: #3E3E3E;
+    --light: #F2F4F7;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light);
+}
+
+/* ==================== Common ==================== */
+.width-30 {
+    width: 30%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.bg-red {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.text-danger {
+    color: var(--red);
+}
+
+.text-purple {
+    color: var(--purple);
+}
+
+.text-red-hover:hover {
+    color: var(--red) !important;
+}
+
+.text-purple-hover:hover {
+    color: var(--purple) !important;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.rounded-16 {
+    border-radius: 16px;
+}
+
+.card {
+    border-radius: 16px;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.pagination .page-link {
+    background-color: transparent;
+    color: var(--dark);
+    font-weight: bold;
+    border: none;
+    box-shadow: none;
+}
+
+.pagination .page-link:hover {
+    color: var(--red);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 8px;
+}
+
+.badge-outline {
+    color: var(--purple);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border: 1px solid var(--purple);
+    border-radius: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.badge-outline:hover {
+    background-color: var(--purple);
+    color: #fff;
+}
+
+/* ==================== Header ==================== */
+.header {
+    height: 460px;
+    background: center / cover no-repeat url("../img/wave.svg");
+}
+
+.logo {
+    font-family: Corinthia, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* ==================== Heading ==================== */
+.heading__title {
+    font-family: "Varela Round", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.search-box input {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+}
+
+.search-box input:focus {
+    box-shadow: none;
+}
+
+.search-box span {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    height: 200px;
+    background: bottom / cover no-repeat url("../img/wave.svg");
+    transform: rotate(180deg);
+}
+
+.footer div {
+    transform: rotate(180deg);
+}
