@@ -2,28 +2,6 @@
 
 :root {
     --primary: #00BFA6;
-    --light-primary: #e6f9f6;
-    --text: #6c757d;
-    --card-column: 2;
-}
-
-::-webkit-scrollbar {
-    width: 20px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #d6dee1;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #a8bbbf;
 }
 
 * {
@@ -34,7 +12,6 @@
 
 body {
     height: 100%;
-    min-height: 100vh;
     line-height: 1.5;
     background: center / cover no-repeat url("../img/background.svg");
     font-size: 16px;
@@ -84,10 +61,9 @@ h2 {
 }
 
 .box {
-    width: 100%;
     max-width: 1200px;
     height: 600px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #fff;
     margin: 64px;
     border-radius: 32px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -109,7 +85,6 @@ h2 {
 
 .box__info--header p {
     line-height: inherit;
-    color: var(--te);
     margin-top: 16px;
     text-align: justify;
 }
@@ -167,4 +142,53 @@ h2 {
 
 .card__body h4 {
     margin-bottom: 8px;
+}
+
+/* For tablet */
+@media screen and (max-width: 767.98px) {
+    body {
+        min-height: 100vh;
+    }
+
+    .box {
+        height: auto;
+        margin: 32px;
+    }
+
+    .box__info,
+    .box__game {
+        width: 50%;
+        height: auto;
+    }
+
+    .box__game--title {
+        display: none;
+    }
+
+    .card__group {
+        display: block;
+    }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+    .box {
+        height: auto;
+        display: block;
+        margin: 16px;
+    }
+
+    .box__info,
+    .box__game {
+        width: 100%;
+        height: auto;
+    }
+
+    .box__info--footer {
+        display: none;
+    }
+
+    .mobile-sm {
+        font-size: 24px;
+    }
 }

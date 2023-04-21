@@ -47,10 +47,14 @@ p {
     justify-content: space-evenly;
 }
 
+form {
+    padding: 16px;
+}
+
 .card {
     width: 800px;
     background-color: #fff;
-    margin: 12px;
+    margin: auto;
     padding: 57px 72px;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -69,6 +73,7 @@ p {
 
 .input__group {
     display: flex;
+    flex-wrap: wrap;
     margin: 10px 0;
 }
 
@@ -77,6 +82,7 @@ p {
 }
 
 input {
+    width: 100%;
     font-family: inherit;
     font-size: inherit;
     border: none;
@@ -85,15 +91,22 @@ input {
 }
 
 input[type="text"] {
-    margin-left: 16px;
+    min-width: 175px;
+    padding-left: 8px;
 }
 
 .radio__group div {
     margin: 10px 0;
+    text-align: center;
     display: inline-block;
 }
 
+.table__scroll {
+    overflow-x: scroll;
+}
+
 table {
+    width: 656px;
     border-collapse: collapse;
     border-radius: 8px;
 }
@@ -122,7 +135,7 @@ textarea {
 }
 
 .btn {
-    width: 200px;
+    width: 40%;
     line-height: inherit;
     font-family: inherit;
     font-size: inherit;
@@ -148,4 +161,22 @@ textarea {
 .btn.btn-danger {
     background-color: var(--red);
     color: #fff;
+}
+
+/* For tablet */
+@media screen and (max-width: 767.98px) {
+    .card {
+        width: auto;
+    }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+    .card {
+        padding: 15px 30px;
+    }
+
+    .input__group label {
+        width: 78px;
+    }
 }
