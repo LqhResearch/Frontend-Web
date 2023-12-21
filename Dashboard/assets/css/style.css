@@ -64,7 +64,7 @@ h2 {
     max-width: 1200px;
     height: 600px;
     background-color: #fff;
-    margin: 64px;
+    margin: 64px auto;
     border-radius: 32px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
@@ -87,6 +87,13 @@ h2 {
     line-height: inherit;
     margin-top: 16px;
     text-align: justify;
+}
+
+.box__info--header img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+    border-radius: 50%;
 }
 
 .box__info--footer img {
